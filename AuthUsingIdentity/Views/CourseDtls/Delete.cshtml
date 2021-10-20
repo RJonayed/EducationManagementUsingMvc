@@ -1,0 +1,42 @@
+﻿@model AuthUsingIdentity.Models.CourseDtl
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="bg-warning">Are you sure you want to delete this?</h3>
+<div class="container-fluid">   
+    <hr />
+    <table class="table table-bordered table-responsive">
+        <tr class="bg-primary">
+            <th>Course ID</th>
+            <th> @Html.DisplayNameFor(model => model.Shift.ShiftName)</th>
+            <th> @Html.DisplayNameFor(model => model.CrsName)</th>
+            <th>@Html.DisplayNameFor(model => model.CrsDuratin)</th>
+            <th>@Html.DisplayNameFor(model => model.ShiftName)</th>
+            <th>  @Html.DisplayNameFor(model => model.CrsFee)</th>
+            <th>@Html.DisplayNameFor(model => model.Remarks)</th>
+            <th>@Html.DisplayNameFor(model => model.IsActive)</th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.CourseDtlId)</td>
+            <td>@Html.DisplayFor(model => model.Shift.ShiftName)</td>
+            <td> @Html.DisplayFor(model => model.CrsName)</td>
+            <td>@Html.DisplayFor(model => model.CrsDuratin)</td>
+            <td>@Html.DisplayFor(model => model.ShiftName)</td>
+            <td> @Html.DisplayFor(model => model.CrsFee)</td>
+            <td> @Html.DisplayFor(model => model.Remarks)</td>
+            <td>@Html.DisplayFor(model => model.IsActive)</td>
+        </tr>
+    </table>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

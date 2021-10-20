@@ -1,0 +1,86 @@
+﻿@model AuthUsingIdentity.Models.Admission
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Addmission Details</h2>
+
+<div>
+    <table class="table table-bordered table-responsive">
+        <tr class="bg-primary">
+            <th>Addmission ID</th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseDtl.CrsName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModuleDtl.MdlName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher.TchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clsRoll)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdsCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdsDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TspId)
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(item => item.AdmissionID)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.CourseDtl.CrsName)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.ModuleDtl.MdlName)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.Teacher.TchName)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.clsRoll)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.StudentsId)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.AdsCost)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.CourseCost)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.AdsDate)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.Remarks)
+            </td>
+            <td>
+                @Html.DisplayFor(item => item.TspId)
+            </td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdmissionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

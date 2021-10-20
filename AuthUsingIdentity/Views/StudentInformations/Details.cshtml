@@ -1,0 +1,36 @@
+﻿@model AuthUsingIdentity.Models.StudentInformation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="bg-success">Details Information</h2>
+
+<div>
+    <hr />
+    <table class="table table-bordered table-responsive">
+        <tr class="bg-primary">
+            <th>Student Id</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model=>model.StudentId)</td>
+            <td>@Html.DisplayFor(model => model.StName)</td>
+            <td>@Html.DisplayFor(model => model.Phone)</td>
+            <td>@Html.DisplayFor(model => model.DateOfbirth)</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+            <td>@Html.DisplayFor(model => model.Addresss)</td>
+            <td>@Html.DisplayFor(model => model.ImageName)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

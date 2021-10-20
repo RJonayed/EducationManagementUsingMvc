@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AuthUsingIdentity.Models.ModuleDtl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="bg-warning">Module Information</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-condensed">
+    <tr class="bg-primary">
+        <th>Module Id</th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseDtl.CrsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MdlName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MdlFees)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>*@
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseDtl.CourseDtlId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseDtl.CrsName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MdlName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MdlFees)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.Remarks)
+    </td>*@
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ModuleDtlId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ModuleDtlId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ModuleDtlId })
+    </td>
+</tr>
+}
+
+</table>

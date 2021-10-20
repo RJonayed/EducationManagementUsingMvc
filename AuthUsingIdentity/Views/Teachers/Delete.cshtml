@@ -1,0 +1,99 @@
+﻿@model AuthUsingIdentity.Models.Teacher
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3 class="bg-warning">Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <div class="form-group">
+        <table class="table table-bordered">
+            <tr class="bg-primary">
+                <th>@Html.DisplayNameFor(model => model.TeacherId)</th>
+                <th>@Html.DisplayNameFor(model => model.TchName)</th>
+                <th>@Html.DisplayNameFor(model => model.JoinDate)</th>
+                <th>@Html.DisplayNameFor(model => model.TchPhone)</th>
+                <th>@Html.DisplayNameFor(model => model.TchEmail)</th>
+                <th>@Html.DisplayNameFor(model => model.salary)</th>
+                <th>@Html.DisplayNameFor(model => model.Remarks)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.TeacherId)</td>
+                <td>@Html.DisplayFor(model => model.TchName)</td>
+                <td>@Html.DisplayFor(model => model.JoinDate)</td>
+                <td>@Html.DisplayFor(model => model.TchPhone)</td>
+                <td>@Html.DisplayFor(model => model.TchEmail)</td>
+                <td>@Html.DisplayFor(model => model.salary)</td>
+                <td>@Html.DisplayFor(model => model.Remarks)</td>
+            </tr>
+        </table>
+    </div>
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TchName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TchName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JoinDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TchPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TchPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TchEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TchEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TchAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TchAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+    </dl>*@
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

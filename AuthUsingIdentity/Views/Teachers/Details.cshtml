@@ -1,0 +1,36 @@
+﻿@model AuthUsingIdentity.Models.Teacher
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="bg-info">Teacher Details Information</h2>
+    <hr />
+    <div class="form-group">
+        <table class="table table-bordered">
+            <tr class="bg-primary">
+                <th>@Html.DisplayNameFor(model => model.TeacherId)</th>
+                <th>@Html.DisplayNameFor(model => model.TchName)</th>
+                <th>@Html.DisplayNameFor(model => model.JoinDate)</th>
+                <th>@Html.DisplayNameFor(model => model.TchPhone)</th>
+                <th>@Html.DisplayNameFor(model => model.TchEmail)</th>
+                <th>@Html.DisplayNameFor(model => model.salary)</th>
+                <th>@Html.DisplayNameFor(model => model.Remarks)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.TeacherId)</td>
+                <td>@Html.DisplayFor(model => model.TchName)</td>
+                <td>@Html.DisplayFor(model => model.JoinDate)</td>
+                <td>@Html.DisplayFor(model => model.TchPhone)</td>
+                <td>@Html.DisplayFor(model => model.TchEmail)</td>
+                <td>@Html.DisplayFor(model => model.salary)</td>
+                <td>@Html.DisplayFor(model => model.Remarks)</td>
+            </tr>
+        </table>
+    </div>
+       
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TeacherId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

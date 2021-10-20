@@ -1,0 +1,46 @@
+﻿@model AuthUsingIdentity.Models.ModuleDtl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="bg-warning">Details</h2>
+    <table class="table table-bordered">
+        <tr class="bg-primary">
+            <th>ID</th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseDtl.CrsName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdlName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdlFees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ModuleDtlId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CourseDtl.CrsName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MdlName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MdlFees)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Remarks)
+            </td>
+        </tr>
+    </table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ModuleDtlId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

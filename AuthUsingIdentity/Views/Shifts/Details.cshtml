@@ -1,0 +1,27 @@
+﻿@model AuthUsingIdentity.Models.Shift
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="bg-success"> Shift Details</h2>
+
+<div class="form-group">    
+    <table class="table table-bordered">
+        <tr class="bg-primary">
+            <th>@Html.DisplayNameFor(model => model.ShiftId)</th>
+            <th>@Html.DisplayNameFor(model => model.ShiftName)</th>
+            <th>@Html.DisplayNameFor(model => model.Remarks)</th>
+        </tr>
+        <tr>
+            <td> @Html.DisplayFor(model => model.ShiftId)</td>
+            <td> @Html.DisplayFor(model => model.Remarks)</td>
+            <td> @Html.DisplayFor(model => model.ShiftName)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShiftId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<AuthUsingIdentity.Models.Admission>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="bg-success">Addmission Details</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-responsive">
+    <tr class="bg-primary">
+        <th>ID</th>
+        <th>
+            Course
+        </th>
+        <th>
+            Module
+        </th>
+        <th>
+            Teacher
+        </th>
+        <th>
+            Roll No
+        </th>
+        <th>
+            Student Id
+        </th>
+        <th>
+            Ads Cost
+        </th>
+        <th>
+            Course Cost
+        </th>
+        <th>
+            Admission Date
+        </th>
+        <th>
+            Institution
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdmissionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseDtl.CrsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModuleDtl.MdlName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teacher.TchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clsRoll)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentsId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdsCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdsDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TspId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.AdmissionID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AdmissionID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AdmissionID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<h4 class="bg-warning">@Html.Action("GetEmployeeCount")</h4>
+<div>
+    <button class="btn btn-primary" id="btnLoadReport">Admission Report</button>
+</div>

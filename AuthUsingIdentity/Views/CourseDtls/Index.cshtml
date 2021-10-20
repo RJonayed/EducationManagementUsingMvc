@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AuthUsingIdentity.Models.CourseDtl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="bg-info">Coure Detaile</h3>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-responsive">
+    <tr class="bg-primary">
+        <th>Course Id</th>
+
+        <th>
+            Course Name
+        </th>
+        <th>
+           Shift
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CrsDuratin)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ShiftName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CrsFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseDtlId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CrsName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Shift.ShiftName)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.CrsDuratin)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.ShiftName)
+    </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.CrsFee)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.IsActive)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CourseDtlId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CourseDtlId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CourseDtlId })
+    </td>
+</tr>
+}
+
+</table>

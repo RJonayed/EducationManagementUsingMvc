@@ -1,0 +1,40 @@
+﻿@model AuthUsingIdentity.Models.StudentInformation
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="bg-danger">Are you sure you want to delete this?</h3>
+<hr />
+<div>
+<table class="table table-bordered table-responsive">
+    <tr class="bg-primary">
+        <th>Student Id</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Date of Birth</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Image</th>
+    </tr>
+    <tr>
+        <td>@Html.DisplayFor(model => model.StudentId)</td>
+        <td>@Html.DisplayFor(model => model.StName)</td>
+        <td>@Html.DisplayFor(model => model.Phone)</td>
+        <td>@Html.DisplayFor(model => model.DateOfbirth)</td>
+        <td>@Html.DisplayFor(model => model.Email)</td>
+        <td>@Html.DisplayFor(model => model.Addresss)</td>
+        <td>@Html.DisplayFor(model => model.ImageName)</td>
+    </tr>
+</table>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-primary" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+</div>

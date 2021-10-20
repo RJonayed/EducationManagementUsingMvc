@@ -1,0 +1,80 @@
+﻿@model IEnumerable<AuthUsingIdentity.Models.ResultMake>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="bg-warning">Result</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr class="bg-primary">
+        <th>ID</th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseDtl.CrsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModuleDtl.MdlName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentInformation.StName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MdlMarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MdlPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MdlGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultDate)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>*@
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ResultMakeId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseDtl.CrsName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModuleDtl.MdlName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StudentInformation.StName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MdlMarks)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MdlPoint)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MdlGrade)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ResultDate)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>*@
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ResultMakeId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ResultMakeId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ResultMakeId })
+    </td>
+</tr>
+}
+
+</table>

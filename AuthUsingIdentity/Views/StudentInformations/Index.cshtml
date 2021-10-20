@@ -1,0 +1,87 @@
+﻿@model IEnumerable<AuthUsingIdentity.Models.StudentInformation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="bg-success">Student Information</h3>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br />
+<div class="row">
+    @*@using (Html.BeginForm("Index", "StudentInformations", FormMethod.Get))
+        {
+            <p>
+                Search By : @Html.TextBox("StudentName")
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+
+        }*@
+    @using (Html.BeginForm())
+    {
+        <p>
+            Search Name: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+            <input type="submit" value="Find" class="btn btn-primary" />
+        </p>
+    }
+</div>
+<table class="table table-bordered table-responsive">
+    <tr class="bg-success">
+        <th>Student Id</th>
+        @*//<th>@Html.ActionLink("Student Name", "Index", new { SortOrder = ViewBag.SortNameParam })</th>*@
+    <th> @Html.ActionLink("Student Name", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })</th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.StName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            Date of birth
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Addresss)
+        </th>
+        <th>
+            Image
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.StudentId)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfbirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Addresss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<h4 class="bg-warning">@Html.Action("GetStudentCount")</h4>
